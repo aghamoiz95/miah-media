@@ -23,9 +23,14 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-5">
             <h4 className="font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-[#f8f8f6] mb-2">Studio</h4>
-            {["The Standard", "Archive", "About Miah", "Commission"].map(link => (
-              <a key={link} href={`#${link.toLowerCase().replace(/\s+/g, '-')}`} className="font-sans text-xs text-[#f8f8f6]/60 transition-colors hover:text-[#e0c88f]">
-                {link}
+            {[
+              { label: "The Standard", href: "#the-standard" },
+              { label: "Archive", href: "#portfolio" },
+              { label: "About Miah", href: "#studio" },
+              { label: "Commission", href: "#commission" },
+            ].map(({ label, href }) => (
+              <a key={label} href={href} className="font-sans text-xs text-[#f8f8f6]/60 transition-colors hover:text-[#e0c88f]">
+                {label}
               </a>
             ))}
           </div>
@@ -38,8 +43,8 @@ export default function Footer() {
         </p>
         <div className="flex gap-8">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-[#f8f8f6]/40 hover:text-[#e0c88f] transition-colors"><Instagram className="w-4 h-4" /></a>
-          <span className="font-sans text-[10px] uppercase tracking-widest text-[#f8f8f6]/40 hover:text-[#e0c88f] cursor-pointer">Privacy</span>
-          <span className="font-sans text-[10px] uppercase tracking-widest text-[#f8f8f6]/40 hover:text-[#e0c88f] cursor-pointer">Terms</span>
+          <a href="#" className="font-sans text-[10px] uppercase tracking-widest text-[#f8f8f6]/40 hover:text-[#e0c88f] transition-colors">Privacy</a>
+          <a href="#" className="font-sans text-[10px] uppercase tracking-widest text-[#f8f8f6]/40 hover:text-[#e0c88f] transition-colors">Terms</a>
         </div>
       </div>
     </footer>

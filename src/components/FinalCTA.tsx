@@ -24,9 +24,9 @@ export default function FinalCTA() {
           <a href="mailto:hello@miahmedia.co.uk" className="w-full sm:w-auto border border-[#e0c88f] bg-[#e0c88f] px-10 py-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-[#0a0a0b] transition-all hover:bg-transparent hover:text-[#e0c88f] text-center">
             Submit Enquiry
           </a>
-          <span className="w-full sm:w-auto border border-[#f8f8f6]/20 bg-transparent px-10 py-4 font-sans text-xs uppercase tracking-[0.2em] text-[#f8f8f6] text-center">
+          <a href="mailto:hello@miahmedia.co.uk?subject=Brochure%20Request" className="w-full sm:w-auto border border-[#f8f8f6]/20 bg-transparent px-10 py-4 font-sans text-xs uppercase tracking-[0.2em] text-[#f8f8f6] text-center transition-all hover:border-[#e0c88f] hover:text-[#e0c88f]">
             View Brochure
-          </span>
+          </a>
         </div>
       </div>
     </section>
