@@ -5,6 +5,6 @@
 - [x] Fix Footer.tsx Privacy/Terms non-interactive spans
 - [x] Fix missing favicon in index.html
 - [x] Add .gitignore
-- [ ] Initialize git repo and commit
-- [ ] Push to GitHub
+- [x] Initialize git repo and commit
+- [x] Push to GitHub
 
