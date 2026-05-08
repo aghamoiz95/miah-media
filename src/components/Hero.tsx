@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -30,27 +31,27 @@ export default function Hero() {
               Premium Media Studio • United Kingdom
             </p>
           </div>
-          
+
           <h1 className="font-serif text-5xl leading-[1.05] text-[#f8f8f6] md:text-7xl lg:text-8xl">
             Cinematic Polish. <br />
             <span className="text-[#e0c88f] italic">Strategic</span> Presentation.
           </h1>
-          
+
           <p className="mt-8 max-w-xl font-sans text-sm font-light leading-relaxed text-[#f8f8f6]/80 md:text-base">
             Miah Media is a luxury visual house architecting refined imagery across real estate, product commercialization, and intimate private portraiture. We do not just capture—we elevate.
           </p>
-          
+
           <div className="mt-12 flex items-center gap-8">
-            <a href="#services" className="group flex items-center gap-4 border-b border-[#e0c88f] pb-2 font-sans text-xs uppercase tracking-widest text-[#f8f8f6] transition-colors hover:text-[#e0c88f]">
+            <Link to="/#services" className="group flex items-center gap-4 border-b border-[#e0c88f] pb-2 font-sans text-xs uppercase tracking-widest text-[#f8f8f6] transition-colors hover:text-[#e0c88f]">
               <span>Explore The Disciplines</span>
-            </a>
-            <a href="#commission" className="flex h-14 w-14 items-center justify-center rounded-full border border-[#f8f8f6]/20 text-[#f8f8f6] transition-all hover:border-[#e0c88f] hover:bg-[#e0c88f]/10">
+            </Link>
+            <Link to="/#commission" className="flex h-14 w-14 items-center justify-center rounded-full border border-[#f8f8f6]/20 text-[#f8f8f6] transition-all hover:border-[#e0c88f] hover:bg-[#e0c88f]/10">
               <ArrowRight className="h-5 w-5" />
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
-      
+
       <div className="absolute bottom-12 left-6 md:left-16 lg:left-24 z-10 flex items-center gap-4">
         <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#f8f8f6]/40">Scroll to discover</p>
         <div className="h-12 w-[1px] bg-gradient-to-b from-[#f8f8f6]/40 to-transparent"></div>

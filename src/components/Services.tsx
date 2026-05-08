@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Services() {
   return (
@@ -15,7 +16,7 @@ export default function Services() {
         {/* Service 1: Real Estate */}
         <div className="relative w-full px-6 md:px-16 lg:px-24">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-0 relative z-10">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -30,8 +31,8 @@ export default function Services() {
                 />
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -43,9 +44,9 @@ export default function Services() {
               <p className="mt-6 font-sans text-sm font-light leading-relaxed text-[#f8f8f6]/70">
                 Designed for discerning agents and developers. We deliver professional, rapid, and repeatable architectural captures that elevate property presentation and drive definitive business outcomes.
               </p>
-              <a href="#portfolio" className="mt-8 inline-flex items-center gap-3 font-sans text-xs uppercase tracking-widest text-[#e0c88f] hover:text-[#f8f8f6] transition-colors">
+              <Link to="/#portfolio" className="mt-8 inline-flex items-center gap-3 font-sans text-xs uppercase tracking-widest text-[#e0c88f] hover:text-[#f8f8f6] transition-colors">
                 View Architectural Work <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -63,18 +64,18 @@ export default function Services() {
               <h3 className="mt-4 font-serif text-4xl md:text-5xl leading-tight">Baby & <br />Faceless Portraiture</h3>
               <div className="mt-8 h-[1px] w-full bg-[#f8f8f6]/10" />
               <p className="mt-8 font-sans text-sm font-light leading-relaxed text-[#f8f8f6]/70">
-                Intimate, safe, and profoundly moving. We specialize in privacy-conscious, faceless photography that preserves the emotional truth of your family&apos;s earliest chapters. 
+                Intimate, safe, and profoundly moving. We specialize in privacy-conscious, faceless photography that preserves the emotional truth of your family&apos;s earliest chapters.
               </p>
               <p className="mt-6 font-sans text-sm font-light leading-relaxed text-[#f8f8f6]/70">
                 Every session is conducted with complete discretion and maternal care, creating timeless heirlooms without compromising your child&apos;s digital privacy.
               </p>
-              <a href="#commission" className="mt-10 inline-block border border-[#e0c88f] px-8 py-4 font-sans text-xs uppercase tracking-widest text-[#e0c88f] hover:bg-[#e0c88f] hover:text-[#0a0a0b] transition-all">
+              <Link to="/#commission" className="mt-10 inline-block border border-[#e0c88f] px-8 py-4 font-sans text-xs uppercase tracking-widest text-[#e0c88f] hover:bg-[#e0c88f] hover:text-[#0a0a0b] transition-all">
                 Discover The Approach
-              </a>
+              </Link>
             </motion.div>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -93,7 +94,7 @@ export default function Services() {
 
         {/* Service 3: Party */}
         <div className="w-full">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -128,13 +129,13 @@ export default function Services() {
               <p className="max-w-sm font-sans text-sm font-light leading-relaxed text-[#f8f8f6]/70">
                 Sharp, minimalist, and impeccably styled. We craft ecommerce-ready imagery that elevates brand perception and provides the polished commercial support your sales demand.
               </p>
-              <a href="#portfolio" className="flex-shrink-0 flex h-16 w-16 items-center justify-center rounded-full border border-[#f8f8f6]/20 transition-all hover:border-[#e0c88f] hover:bg-[#e0c88f] hover:text-[#0a0a0b]">
+              <Link to="/#portfolio" className="flex-shrink-0 flex h-16 w-16 items-center justify-center rounded-full border border-[#f8f8f6]/20 transition-all hover:border-[#e0c88f] hover:bg-[#e0c88f] hover:text-[#0a0a0b]">
                 <ArrowRight className="w-6 h-6" />
-              </a>
+              </Link>
             </div>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
