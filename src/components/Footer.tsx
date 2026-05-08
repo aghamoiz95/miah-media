@@ -15,12 +15,18 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-16 md:gap-24">
           <div className="flex flex-col gap-5">
             <h4 className="font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-[#f8f8f6] mb-2">Disciplines</h4>
-            {["Real Estate", "Baby & Faceless", "Bespoke Events", "Product & Commerce"].map(link => (
-              <a key={link} href="#services" className="font-sans text-xs text-[#f8f8f6]/60 transition-colors hover:text-[#e0c88f]">
-                {link}
+            {[
+              { label: "Real Estate", to: "/services/real-estate" },
+              { label: "Baby & Faceless", to: "/services/baby-faceless" },
+              { label: "Bespoke Events", to: "/services/bespoke-events" },
+              { label: "Product & Commerce", to: "/services/product-commerce" },
+            ].map(({ label, to }) => (
+              <a key={label} href={to} className="font-sans text-xs text-[#f8f8f6]/60 transition-colors hover:text-[#e0c88f]">
+                {label}
               </a>
             ))}
           </div>
+
           <div className="flex flex-col gap-5">
             <h4 className="font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-[#f8f8f6] mb-2">Studio</h4>
             {[
@@ -42,10 +48,22 @@ export default function Footer() {
           © {new Date().getFullYear()} Miah Media. All rights reserved.
         </p>
         <div className="flex gap-8">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-[#f8f8f6]/40 hover:text-[#e0c88f] transition-colors"><Instagram className="w-4 h-4" /></a>
-          <a href="#" className="font-sans text-[10px] uppercase tracking-widest text-[#f8f8f6]/40 hover:text-[#e0c88f] transition-colors">Privacy</a>
-          <a href="#" className="font-sans text-[10px] uppercase tracking-widest text-[#f8f8f6]/40 hover:text-[#e0c88f] transition-colors">Terms</a>
+          <a
+            href="https://instagram.com/miahmedia"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#f8f8f6]/40 hover:text-[#e0c88f] transition-colors"
+          >
+            <Instagram className="w-4 h-4" />
+          </a>
+          <a href="/privacy" className="font-sans text-[10px] uppercase tracking-widest text-[#f8f8f6]/40 hover:text-[#e0c88f] transition-colors">
+            Privacy
+          </a>
+          <a href="/terms" className="font-sans text-[10px] uppercase tracking-widest text-[#f8f8f6]/40 hover:text-[#e0c88f] transition-colors">
+            Terms
+          </a>
         </div>
+
       </div>
     </footer>
   );

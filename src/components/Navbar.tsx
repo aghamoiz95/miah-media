@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Instagram, Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import BrandLogo from "./BrandLogo";
 
-const NAV_LINKS = ["Services", "Portfolio", "Studio", "The Standard", "Commission"];
+const NAV_LINKS: Array<{ label: string; to: string }> = [
+  { label: "Services", to: "/services" },
+  { label: "Portfolio", to: "/portfolio" },
+  { label: "Studio", to: "/studio" },
+  { label: "The Standard", to: "/" },
+  { label: "Commission", to: "/contact" },
+];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,24 +38,34 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center gap-12">
             {NAV_LINKS.map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
+              <Link
+                key={link.to}
+                to={link.to}
                 className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-[#f8f8f6]/80 transition-colors hover:text-[#e0c88f]"
               >
-                {link}
-              </a>
+                {link.label}
+              </Link>
             ))}
           </div>
 
+
           <div className="hidden md:flex items-center gap-8">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-[#f8f8f6]/80 hover:text-[#e0c88f] transition-colors">
+            <a
+              href="https://instagram.com/miahmedia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#f8f8f6]/80 hover:text-[#e0c88f] transition-colors"
+            >
               <Instagram className="h-4 w-4" />
             </a>
-            <a href="#commission" className="border border-[#e0c88f] px-6 py-2.5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#e0c88f] transition-colors hover:bg-[#e0c88f] hover:text-[#0a0a0b]">
+            <Link
+              to="/contact"
+              className="border border-[#e0c88f] px-6 py-2.5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#e0c88f] transition-colors hover:bg-[#e0c88f] hover:text-[#0a0a0b]"
+            >
               Enquire
-            </a>
+            </Link>
           </div>
+
 
           <button 
             className="z-50 lg:hidden text-[#f8f8f6]"
@@ -67,19 +84,17 @@ export default function Navbar() {
         className="fixed inset-0 z-40 bg-[#0a0a0b] flex flex-col items-center justify-center gap-10"
       >
         {NAV_LINKS.map((link) => (
-          <a
-            key={link}
-            href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
+          <Link
+            key={link.to}
+            to={link.to}
             onClick={() => setMobileMenuOpen(false)}
             className="font-serif text-3xl text-[#f8f8f6] hover:text-[#e0c88f] transition-colors"
           >
-            {link}
-          </a>
+            {link.label}
+          </Link>
         ))}
-        <a href="#commission" onClick={() => setMobileMenuOpen(false)} className="mt-8 border border-[#e0c88f] px-10 py-4 font-sans text-xs uppercase tracking-[0.2em] text-[#e0c88f]">
-          Enquire
-        </a>
       </motion.div>
+
     </>
   );
 }
