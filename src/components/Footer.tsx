@@ -1,4 +1,5 @@
 import { Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 import BrandLogo from "./BrandLogo";
 
 export default function Footer() {
@@ -11,7 +12,7 @@ export default function Footer() {
             Premium editorial photography and visual media. Based in the United Kingdom, available for select commissions globally.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-2 gap-16 md:gap-24">
           <div className="flex flex-col gap-5">
             <h4 className="font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-[#f8f8f6] mb-2">Disciplines</h4>
@@ -21,28 +22,28 @@ export default function Footer() {
               { label: "Bespoke Events", to: "/services/bespoke-events" },
               { label: "Product & Commerce", to: "/services/product-commerce" },
             ].map(({ label, to }) => (
-              <a key={label} href={to} className="font-sans text-xs text-[#f8f8f6]/60 transition-colors hover:text-[#e0c88f]">
+              <Link key={label} to={to} className="font-sans text-xs text-[#f8f8f6]/60 transition-colors hover:text-[#e0c88f]">
                 {label}
-              </a>
+              </Link>
             ))}
           </div>
 
           <div className="flex flex-col gap-5">
             <h4 className="font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-[#f8f8f6] mb-2">Studio</h4>
             {[
-              { label: "The Standard", href: "#the-standard" },
-              { label: "Archive", href: "#portfolio" },
-              { label: "About Miah", href: "#studio" },
-              { label: "Commission", href: "#commission" },
-            ].map(({ label, href }) => (
-              <a key={label} href={href} className="font-sans text-xs text-[#f8f8f6]/60 transition-colors hover:text-[#e0c88f]">
+              { label: "The Standard", to: "/#the-standard" },
+              { label: "Archive", to: "/#portfolio" },
+              { label: "About Miah", to: "/#studio" },
+              { label: "Commission", to: "/#commission" },
+            ].map(({ label, to }) => (
+              <Link key={label} to={to} className="font-sans text-xs text-[#f8f8f6]/60 transition-colors hover:text-[#e0c88f]">
                 {label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
       </div>
-      
+
       <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-6">
         <p className="font-sans text-[10px] uppercase tracking-widest text-[#f8f8f6]/40">
           © {new Date().getFullYear()} Miah Media. All rights reserved.
@@ -56,12 +57,12 @@ export default function Footer() {
           >
             <Instagram className="w-4 h-4" />
           </a>
-          <a href="/privacy" className="font-sans text-[10px] uppercase tracking-widest text-[#f8f8f6]/40 hover:text-[#e0c88f] transition-colors">
+          <Link to="/privacy" className="font-sans text-[10px] uppercase tracking-widest text-[#f8f8f6]/40 hover:text-[#e0c88f] transition-colors">
             Privacy
-          </a>
-          <a href="/terms" className="font-sans text-[10px] uppercase tracking-widest text-[#f8f8f6]/40 hover:text-[#e0c88f] transition-colors">
+          </Link>
+          <Link to="/terms" className="font-sans text-[10px] uppercase tracking-widest text-[#f8f8f6]/40 hover:text-[#e0c88f] transition-colors">
             Terms
-          </a>
+          </Link>
         </div>
 
       </div>
