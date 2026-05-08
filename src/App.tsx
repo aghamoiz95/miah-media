@@ -1,27 +1,44 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import TrustCredibility from "./components/TrustCredibility";
-import Portfolio from "./components/Portfolio";
-import BrandStory from "./components/BrandStory";
-import Testimonials from "./components/Testimonials";
-import FinalCTA from "./components/FinalCTA";
-import Footer from "./components/Footer";
+import { Routes, Route } from "react-router-dom";
+import DefaultLayout from "./layouts/DefaultLayout";
 
-function App() {
+import Home from "./pages/Home";
+import Studio from "./pages/Studio";
+import Services from "./pages/Services";
+
+import ServiceRealEstate from "./pages/ServiceRealEstate";
+import ServiceBabyFaceless from "./pages/ServiceBabyFaceless";
+import ServiceBespokeEvents from "./pages/ServiceBespokeEvents";
+import ServiceProductCommerce from "./pages/ServiceProductCommerce";
+
+import Portfolio from "./pages/Portfolio";
+import Testimonials from "./pages/Testimonials";
+import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
+
+export default function App() {
   return (
-    <div className="min-h-screen bg-[#0a0a0b] font-sans selection:bg-[#e0c88f] selection:text-[#0a0a0b]">
-      <Navbar />
-      <Hero />
-      <Services />
-      <TrustCredibility />
-      <Portfolio />
-      <BrandStory />
-      <Testimonials />
-      <FinalCTA />
-      <Footer />
-    </div>
+    <DefaultLayout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route path="/studio" element={<Studio />} />
+        <Route path="/services" element={<Services />} />
+
+        <Route path="/services/real-estate" element={<ServiceRealEstate />} />
+        <Route path="/services/baby-faceless" element={<ServiceBabyFaceless />} />
+        <Route path="/services/bespoke-events" element={<ServiceBespokeEvents />} />
+        <Route path="/services/product-commerce" element={<ServiceProductCommerce />} />
+
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/testimonials" element={<Testimonials />} />
+
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<Terms />} />
+      </Routes>
+    </DefaultLayout>
   );
 }
 
-export default App;
+
