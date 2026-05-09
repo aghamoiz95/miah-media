@@ -37,9 +37,11 @@ for (const route of ROUTES) {
   const dir = join(DIST, route);
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
   const target = join(dir, "index.html");
-  writeFileSync(target, indexContent);
-  console.log(`  wrote ${target}`);
-  count++;
+  const oldContent = existsSync(target) ? readFileSync(target, "utf8") : "";
+  if (oldContent !== indexContent) {
+    writeFileSync(target, indexContent);
+    count++;
+  }
 }
 
-console.log(`\nGenerated ${count} GitHub Pages SPA fallback files.`);
+console.log(`Generated ${count} GitHub Pages SPA fallback files.`);
