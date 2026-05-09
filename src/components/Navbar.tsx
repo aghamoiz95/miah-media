@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Instagram, Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import BrandLogo from "./BrandLogo";
@@ -12,34 +12,9 @@ const NAV_LINKS: Array<{ label: string; to: string }> = [
   { label: "Commission", to: "/contact" },
 ];
 
-function useNavigateToHash() {
-  const navigate = useNavigate();
-  return useCallback(
-    (to: string) => {
-      const idx = to.indexOf("#");
-      if (idx === -1) {
-        navigate(to);
-        return;
-      }
-      const path = to.slice(0, idx);
-      const hash = to.slice(idx + 1);
-      navigate(path);
-      // Wait for route change and render, then scroll
-      setTimeout(() => {
-        const el = document.getElementById(hash);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 150);
-    },
-    [navigate]
-  );
-}
-
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const navigateToHash = useNavigateToHash();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,34 +32,24 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between px-6 md:px-16 lg:px-24">
-          <Link to="/" className="z-50 group" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+          <Link
+            to="/"
+            className="z-50 group"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             <BrandLogo />
           </Link>
 
           <div className="hidden lg:flex items-center gap-12">
-            {NAV_LINKS.map((link) => {
-              const isHash = link.to.includes("#");
-              if (isHash) {
-                return (
-                  <button
-                    key={link.to}
-                    onClick={() => navigateToHash(link.to)}
-                    className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-[#f8f8f6]/80 transition-colors hover:text-[#e0c88f] bg-transparent border-none cursor-pointer"
-                  >
-                    {link.label}
-                  </button>
-                );
-              }
-              return (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-[#f8f8f6]/80 transition-colors hover:text-[#e0c88f]"
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-[#f8f8f6]/80 transition-colors hover:text-[#e0c88f]"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
           <div className="hidden md:flex items-center gap-8">
@@ -120,33 +85,16 @@ export default function Navbar() {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="fixed inset-0 z-40 bg-[#0a0a0b] flex flex-col items-center justify-center gap-10"
       >
-        {NAV_LINKS.map((link) => {
-          const isHash = link.to.includes("#");
-          if (isHash) {
-            return (
-              <button
-                key={link.to}
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  navigateToHash(link.to);
-                }}
-                className="font-serif text-3xl text-[#f8f8f6] hover:text-[#e0c88f] transition-colors bg-transparent border-none cursor-pointer"
-              >
-                {link.label}
-              </button>
-            );
-          }
-          return (
-            <Link
-              key={link.to}
-              to={link.to}
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-serif text-3xl text-[#f8f8f6] hover:text-[#e0c88f] transition-colors"
-            >
-              {link.label}
-            </Link>
-          );
-        })}
+        {NAV_LINKS.map((link) => (
+          <Link
+            key={link.to}
+            to={link.to}
+            onClick={() => setMobileMenuOpen(false)}
+            className="font-serif text-3xl text-[#f8f8f6] hover:text-[#e0c88f] transition-colors"
+          >
+            {link.label}
+          </Link>
+        ))}
       </motion.div>
     </>
   );
