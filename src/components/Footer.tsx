@@ -1,8 +1,32 @@
+import { useCallback } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Instagram } from "lucide-react";
-import { Link } from "react-router-dom";
 import BrandLogo from "./BrandLogo";
 
+function useNavigateToHash() {
+  const navigate = useNavigate();
+  return useCallback(
+    (to: string, isHash?: boolean) => {
+      if (isHash) {
+        const idx = to.indexOf("#");
+        const hash = idx === -1 ? "" : to.slice(idx + 1);
+        const path = idx === -1 ? to : to.slice(0, idx);
+        navigate(path);
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 150);
+        return;
+      }
+      navigate(to);
+    },
+    [navigate]
+  );
+}
+
 export default function Footer() {
+  const navigateToHash = useNavigateToHash();
+
   return (
     <footer className="bg-[#050505] pt-24 pb-12 px-6 md:px-16 lg:px-24">
       <div className="flex flex-col md:flex-row justify-between items-start gap-16 border-b border-[#f8f8f6]/10 pb-16">
@@ -31,14 +55,18 @@ export default function Footer() {
           <div className="flex flex-col gap-5">
             <h4 className="font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-[#f8f8f6] mb-2">Studio</h4>
             {[
-              { label: "The Standard", to: "/services#the-standard" },
+              { label: "The Standard", to: "/services#the-standard", hash: true },
               { label: "Portfolio", to: "/portfolio" },
               { label: "About Miah", to: "/studio" },
               { label: "Commission", to: "/contact" },
-            ].map(({ label, to }) => (
-              <Link key={label} to={to} className="font-sans text-xs text-[#f8f8f6]/60 transition-colors hover:text-[#e0c88f]">
+            ].map(({ label, to, hash }) => (
+              <button
+                key={label}
+                onClick={() => navigateToHash(to, hash)}
+                className="font-sans text-xs text-[#f8f8f6]/60 transition-colors hover:text-[#e0c88f] text-left bg-transparent border-none cursor-pointer p-0"
+              >
                 {label}
-              </Link>
+              </button>
             ))}
           </div>
         </div>
@@ -69,4 +97,3 @@ export default function Footer() {
     </footer>
   );
 }
-
