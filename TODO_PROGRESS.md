@@ -9,8 +9,8 @@
 
 
 
-- [ ] Add service package placeholders per service page
-- [ ] Update/organize image placeholders and logo usage
-- [ ] Build + deploy to GitHub Pages
+- [x] Add service package placeholders per service page
+- [x] Update/organize image placeholders and logo usage
+- [x] Build + deploy to GitHub Pages
 - [ ] Wix custom domain DNS + GitHub Pages custom domain (last)
 

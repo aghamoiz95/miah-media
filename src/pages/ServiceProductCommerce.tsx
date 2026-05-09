@@ -5,52 +5,60 @@ import ServicePackages from "../components/ServicePackages";
 export default function ServiceProductCommerce() {
   return (
     <>
-      <Portfolio />
-      <FinalCTA />
       <ServicePackages
-        heading="Product & commerce packages"
+        heading="Product & Commerce Packages"
         packages={[
           {
             name: "Catalog",
-            price: "£TBC",
+            price: "£15 – £35 / image",
             features: [
-              "Placeholder: product-focused editorial coverage",
-              "Placeholder: clean backgrounds + variations",
-              "Placeholder: listing and marketing crops",
+              "Clean white‑background or lifestyle product shots",
+              "Up to 30 products photographed per session",
+              "Basic retouching and colour correction",
+              "Web‑optimised and high‑resolution deliverables",
             ],
           },
           {
             name: "Campaign",
-            price: "£TBC",
+            price: "£1,500 – £3,500",
             features: [
-              "Placeholder: campaign set with creative direction",
-              "Placeholder: multiple angles + styling",
-              "Placeholder: delivery schedule for launches",
+              "Creative‑directed hero images for seasonal or launch campaigns",
+              "Multiple angles, packshots, and contextual lifestyle set‑ups",
+              "Art direction, styling, and set design included",
+              "Delivery schedule aligned to your launch timeline",
             ],
           },
           {
             name: "Launch Bundle",
-            price: "£TBC",
+            price: "£3,000 – £6,000",
             features: [
-              "Placeholder: bundle assets for web + social",
-              "Placeholder: selection + refinement process",
-              "Placeholder: deposit-to-booking confirmation",
+              "Complete brand asset package: product, lifestyle, and behind‑the‑scenes",
+              "Web, social, and print‑ready formats",
+              "Selection and refinement session included",
+              "Deposit secures your date — balance due on delivery",
             ],
           },
           {
             name: "Signature Commerce",
-            price: "£TBC",
+            price: "Custom quotation",
             features: [
-              "Placeholder: premium scaled deliverables",
-              "Placeholder: priority scheduling",
-              "Placeholder: bespoke editorial set",
+              "Premium scaled deliverables across multiple product lines",
+              "Priority scheduling and dedicated shoot days",
+              "Bespoke editorial set with art direction from our creative team",
+              "Ongoing partnership with quarterly content refresh options",
             ],
           },
         ]}
+        depositNote={
+          <>
+            A <strong>50% deposit</strong> is required before each shoot day.
+            Final pricing is based on the number of products, set complexity,
+            and delivery timeline. All images are supplied with full commercial
+            usage rights.
+          </>
+        }
       />
+      <FinalCTA />
     </>
   );
 }
-
-
-

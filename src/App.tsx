@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import DefaultLayout from "./layouts/DefaultLayout";
+import useScrollToHash from "./hooks/useScrollToHash";
 
 import Home from "./pages/Home";
 import Studio from "./pages/Studio";
@@ -17,6 +18,8 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 
 export default function App() {
+  useScrollToHash();
+
   return (
     <DefaultLayout>
       <Routes>

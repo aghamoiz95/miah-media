@@ -8,49 +8,58 @@ export default function ServiceRealEstate() {
       <TrustCredibility />
       <Portfolio />
       <ServicePackages
-        heading="Real Estate packages"
+        heading="Real Estate Packages"
         packages={[
           {
-            name: "Starter",
-            price: "£TBC",
+            name: "Essential",
+            price: "£850 – £1,200",
             features: [
-              "Placeholder: interior highlights + selected details",
-              "Placeholder: turnaround and delivery format",
-              "Placeholder: marketing-ready crop variations",
+              "12–15 edited images, delivered in 5–7 business days",
+              "Full room coverage with key feature highlights",
+              "Horizontal and vertical crops for listings and portals",
+              "Online gallery for easy download and sharing",
             ],
           },
           {
-            name: "Editorial",
-            price: "£TBC",
+            name: "Professional",
+            price: "£1,500 – £2,500",
             features: [
-              "Placeholder: full room coverage + exterior coordination",
-              "Placeholder: mood set + styling guidance",
-              "Placeholder: fast review workflow",
+              "20–30 edited images with twilight and lifestyle shots",
+              "Mood styling consultation prior to shoot",
+              "Priority 48-hour turnaround available",
+              "Social media–ready formats and marketing crops",
             ],
           },
           {
             name: "Premium",
-            price: "£TBC",
+            price: "£2,800 – £4,000",
             features: [
-              "Placeholder: on-site guidance + expanded editorial set",
-              "Placeholder: priority scheduling",
-              "Placeholder: feature pack for listings",
+              "40–60 images including aerial, dusk, and detail close‑ups",
+              "On‑site styling and art direction",
+              "Dedicated project manager and priority scheduling",
+              "Full usage rights and bespoke deliverable packages",
             ],
           },
           {
-            name: "Showcase",
-            price: "£TBC",
+            name: "Bespoke",
+            price: "Custom quotation",
             features: [
-              "Placeholder: large property coverage and scaled deliverables",
-              "Placeholder: marketing assets bundling",
-              "Placeholder: deposit-to-booking confirmation",
+              "Tailored coverage for large estates or commercial developments",
+              "Multi‑day shoots with video walkthroughs available",
+              "Brand‑aligned marketing asset bundles",
+              "Deposit secures your date — balance due before delivery",
             ],
           },
         ]}
+        depositNote={
+          <>
+            A <strong>50% deposit</strong> is required to secure your date. Final
+            pricing is confirmed after an on‑site assessment and project scope
+            discussion. All deliverables are supplied in high‑resolution JPEG and
+            web‑optimised formats.
+          </>
+        }
       />
     </>
   );
 }
-
-
-

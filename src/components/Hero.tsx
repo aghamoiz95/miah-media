@@ -14,6 +14,7 @@ export default function Hero() {
           src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1920&q=80"
           alt="Cinematic High-End Photography"
           className="h-full w-full object-cover object-center opacity-60"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-[#0a0a0b]" />
       </motion.div>
@@ -42,10 +43,10 @@ export default function Hero() {
           </p>
 
           <div className="mt-12 flex items-center gap-8">
-            <Link to="/#services" className="group flex items-center gap-4 border-b border-[#e0c88f] pb-2 font-sans text-xs uppercase tracking-widest text-[#f8f8f6] transition-colors hover:text-[#e0c88f]">
+            <Link to="/services" className="group flex items-center gap-4 border-b border-[#e0c88f] pb-2 font-sans text-xs uppercase tracking-widest text-[#f8f8f6] transition-colors hover:text-[#e0c88f]" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <span>Explore The Disciplines</span>
             </Link>
-            <Link to="/#commission" className="flex h-14 w-14 items-center justify-center rounded-full border border-[#f8f8f6]/20 text-[#f8f8f6] transition-all hover:border-[#e0c88f] hover:bg-[#e0c88f]/10">
+            <Link to="/contact" className="flex h-14 w-14 items-center justify-center rounded-full border border-[#f8f8f6]/20 text-[#f8f8f6] transition-all hover:border-[#e0c88f] hover:bg-[#e0c88f]/10">
               <ArrowRight className="h-5 w-5" />
             </Link>
           </div>

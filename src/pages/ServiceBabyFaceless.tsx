@@ -6,51 +6,59 @@ export default function ServiceBabyFaceless() {
   return (
     <>
       <TrustCredibility />
-      <FinalCTA />
       <ServicePackages
-        heading="Baby & faceless packages"
+        heading="Baby & Faceless Packages"
         packages={[
           {
             name: "Gentle Session",
-            price: "£TBC",
+            price: "£350 – £550",
             features: [
-              "Placeholder: soothing, minimal-stress session flow",
-              "Placeholder: faceless/covered compositions",
-              "Placeholder: curated select delivery",
+              "30–45 minute in‑home session",
+              "15–20 edited faceless and wrapped compositions",
+              "Curated selection delivered within 7 days",
+              "Online gallery with download and sharing options",
             ],
           },
           {
             name: "Family Story",
-            price: "£TBC",
+            price: "£600 – £900",
             features: [
-              "Placeholder: guided family positioning",
-              "Placeholder: styling notes + session preparation",
-              "Placeholder: expanded deliverables",
+              "60 minute guided family session",
+              "30–40 edited images including candids and posed portraits",
+              "Styling guidance and preparation notes included",
+              "Priority booking and flexible rescheduling",
             ],
           },
           {
             name: "Keepsake",
-            price: "£TBC",
+            price: "£1,200 – £1,800",
             features: [
-              "Placeholder: premium editorial set",
-              "Placeholder: priority scheduling",
-              "Placeholder: deposit to secure your date",
+              "90 minute premium editorial session",
+              "60+ final images with colour grading and retouching",
+              "Print‑ready files and optional album layout",
+              "Priority scheduling with early‑morning or golden‑hour options",
             ],
           },
           {
             name: "Signature",
-            price: "£TBC",
+            price: "£2,000 – £3,000",
             features: [
-              "Placeholder: scaled session + curated story set",
-              "Placeholder: optional add-ons (TBC)",
-              "Placeholder: final refinement + delivery",
+              "Full day coverage (up to 6 hours) from birth to first bath",
+              "80+ curated images in a bespoke story sequence",
+              "Dedicated pre‑session consultation and mood board",
+              "Printed heirloom album and framed gallery piece",
             ],
           },
         ]}
+        depositNote={
+          <>
+            A non‑refundable <strong>50% deposit</strong> secures your session
+            date. Newborn sessions are best booked 4–6 weeks in advance. The
+            remaining balance is due 48 hours before the session.
+          </>
+        }
       />
+      <FinalCTA />
     </>
   );
 }
-
-
-

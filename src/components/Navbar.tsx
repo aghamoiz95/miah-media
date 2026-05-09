@@ -8,7 +8,7 @@ const NAV_LINKS: Array<{ label: string; to: string }> = [
   { label: "Services", to: "/services" },
   { label: "Portfolio", to: "/portfolio" },
   { label: "Studio", to: "/studio" },
-  { label: "The Standard", to: "/" },
+  { label: "The Standard", to: "/services#the-standard" },
   { label: "Commission", to: "/contact" },
 ];
 

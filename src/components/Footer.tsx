@@ -31,10 +31,10 @@ export default function Footer() {
           <div className="flex flex-col gap-5">
             <h4 className="font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-[#f8f8f6] mb-2">Studio</h4>
             {[
-              { label: "The Standard", to: "/#the-standard" },
-              { label: "Archive", to: "/#portfolio" },
-              { label: "About Miah", to: "/#studio" },
-              { label: "Commission", to: "/#commission" },
+              { label: "The Standard", to: "/services#the-standard" },
+              { label: "Portfolio", to: "/portfolio" },
+              { label: "About Miah", to: "/studio" },
+              { label: "Commission", to: "/contact" },
             ].map(({ label, to }) => (
               <Link key={label} to={to} className="font-sans text-xs text-[#f8f8f6]/60 transition-colors hover:text-[#e0c88f]">
                 {label}
